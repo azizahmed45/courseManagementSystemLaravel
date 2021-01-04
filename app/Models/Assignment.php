@@ -13,4 +13,14 @@ class Assignment extends Model
     {
         return $this->belongsTo(Course::class);
     }
+
+    public function files()
+    {
+        return $this->belongsToMany(File::class);
+    }
+
+    public function answers()
+    {
+        return $this->hasMany(AssignmentAnswer::class);
+    }
 }
