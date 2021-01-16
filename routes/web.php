@@ -33,6 +33,8 @@ Route::get('/migrate', function () {
 });
 
 Auth::routes();
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::prefix('student')->middleware('auth')->name('student.')->group(function(){
     Route::get('/dashboard', [StudentController::class, 'dashboard'])->name('dashboard');
     Route::get('/profile', [StudentController::class, 'profile'])->name('profile');
@@ -49,6 +51,3 @@ Route::prefix('teacher')->middleware('auth')->name('teacher.')->group(function()
     Route::get('/courses/add', [TeacherController::class, 'addCourse'])->name('addCourse');
     Route::get('/courses/{course}/students', [CourseController::class, 'students'])->name('courses.students');
 });
-Route::get('/profile')->name('profile');
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

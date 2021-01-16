@@ -59,7 +59,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-
+                                        <span class="nav-link"> Invite Code <kbd class="float-right">{{ $course->invite_code }}</kbd> </span>
                                     </li>
                                 </ul>
                             </div>
