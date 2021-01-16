@@ -20,9 +20,9 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Route::get('/', function () {
+Route::get('/migrate', function () {
 
-
+    \Illuminate\Support\Facades\Artisan::call('migrate');
     return view('test');
 ///    $teacher = Teacher::query()->firstOrFail();
 //
