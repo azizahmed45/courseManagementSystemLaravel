@@ -3,6 +3,7 @@
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,14 +23,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/migrate', function () {
 
-    \Illuminate\Support\Facades\Artisan::call('migrate:fresh');
+    return Artisan::call('migrate');
     return view('test');
 ///    $teacher = Teacher::query()->firstOrFail();
 //
 //    $courses = $teacher->courses;
 //
 //    return $courses[0];
-})->middleware('auth');
+});
 
 Auth::routes();
 Route::prefix('student')->middleware('auth')->name('student.')->group(function(){
