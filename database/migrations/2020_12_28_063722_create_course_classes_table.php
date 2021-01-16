@@ -17,8 +17,8 @@ class CreateCourseClassesTable extends Migration
             $table->id();
             $table->foreignId('course_id');
             $table->date('date');
-            $table->timestamp('start_time');
-            $table->timestamp('end_time');
+            $table->timestamp('start_time')->nullable();
+            $table->timestamp('end_time')->nullable();
             $table->timestamps();
 
             $table->foreign('course_id')->references('id')->on('courses');
