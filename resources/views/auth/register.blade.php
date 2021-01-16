@@ -23,10 +23,13 @@
                     <div class="field">
                         <label class="label">Name</label>
                         <div class="control has-icons-left">
-                            <input name="name" class="input @error('name') is-danger @enderror" type="text" placeholder="Your Name">
+                            <input name="name" class="input @error('name') is-danger @enderror" type="text" placeholder="Your Name" required>
                             <span class=" icon is-small is-left">
                                     <i class="fas fa-user"></i>
                                 </span>
+                            @error('name')
+                            <p class="help is-danger">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
 
@@ -48,30 +51,39 @@
                     <div class="field">
                         <label class="label">Email</label>
                         <div class="control has-icons-left">
-                            <input name="email" class="input @error('password') is-danger @enderror" type="email" placeholder="name@example.com">
+                            <input name="email" class="input @error('email') is-danger @enderror" type="email" placeholder="name@example.com" required>
                             <span class=" icon is-small is-left">
                                     <i class="fas fa-user"></i>
                                 </span>
+                            @error('email')
+                            <p class="help is-danger">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
 
                     <div class="field">
                         <label class="label">Password</label>
                         <div class="control has-icons-left">
-                            <input name="password" class="input @error('password') is-danger @enderror" type="password" placeholder="password">
+                            <input name="password" class="input @error('password') is-danger @enderror" type="password" placeholder="password"  required>
                             <span class="icon is-small is-left">
                                     <i class="fas fa-lock"></i>
                                 </span>
+                            @error('password')
+                            <p class="help is-danger">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
 
                     <div class="field">
                         <label class="label">Confirm Password</label>
                         <div class="control has-icons-left">
-                            <input name="password_confirmation" class="input" type="password" placeholder="confirm password">
+                            <input name="password_confirmation" class="input" type="password" placeholder="confirm password" required>
                             <span class="icon is-small is-left">
                                     <i class="fas fa-lock"></i>
                                 </span>
+                            @error('confirm_password')
+                            <p class="help is-danger">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
 
