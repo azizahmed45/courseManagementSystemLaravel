@@ -20,8 +20,8 @@ class CreateExamsTable extends Migration
             $table->foreignId('exam_type_id');
             $table->float('full_marks');
             $table->date('date');
-            $table->timestamp('start_time')->useCurrent();
-            $table->timestamp('end_time')->useCurrent();
+            $table->timestamp('start_time');
+            $table->timestamp('end_time');
             $table->timestamps();
 
             $table->foreign('exam_type_id')->references('id')->on('exam_types');

@@ -17,7 +17,7 @@ class CreateAssignmentsTable extends Migration
             $table->id();
             $table->foreignId('course_id');
             $table->float('full_marks');
-            $table->timestamp('submission_deadline')->useCurrent();
+            $table->timestamp('submission_deadline');
             $table->string('title');
             $table->string('description');
             $table->timestamps();
