@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/migrate', function () {
 
-    return Artisan::call('migrate');
+    return Artisan::call('migrate:fresh');
     return view('test');
 ///    $teacher = Teacher::query()->firstOrFail();
 //
