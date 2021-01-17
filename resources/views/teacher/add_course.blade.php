@@ -20,7 +20,7 @@
                         <div class="form-group">
                             <label for="name">Course Name</label>
                             <input name="name" type="text"
-                                   class="form-control @error('invitation_code') is-invalid @enderror"
+                                   class="form-control @error('name') is-invalid @enderror"
                                    placeholder="Course name" >
                             @error('name')
                                 <p class="text-danger"> {{ $message }}</p>

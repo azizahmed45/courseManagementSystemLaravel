@@ -16,7 +16,9 @@ class StudentController extends Controller
 
     public function dashboard()
     {
-        return view('student.dashboard');
+        $student = Auth::user()->student;
+
+        return view('student.dashboard', ['student' => $student]);
     }
 
     public function joinCourse()

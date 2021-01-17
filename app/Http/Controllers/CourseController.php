@@ -16,6 +16,11 @@ class CourseController extends Controller
         return view('common.students', ['course' => $course]);
     }
 
+    public function assignments(Course $course)
+    {
+        return view('common.assignments', ['course' => $course]);
+    }
+
     public function join(Request $request)
     {
         $validator = Validator::make($request->all(),

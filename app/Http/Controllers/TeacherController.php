@@ -16,7 +16,9 @@ class TeacherController extends Controller
 
     public function dashboard()
     {
-        return view('teacher.dashboard');
+        $teacher = Auth::user()->teacher;
+
+        return view('teacher.dashboard', ['teacher' => $teacher]);
     }
 
     public function addCourse()

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
@@ -42,6 +43,7 @@ Route::prefix('student')->middleware('auth')->name('student.')->group(function()
     Route::post('/courses/join', [CourseController::class, 'join'])->name('joinCourse');
     Route::get('/courses/join', [StudentController::class, 'joinCourse'])->name('joinCourse');
     Route::get('/courses/{course}/students', [CourseController::class, 'students'])->name('courses.students');
+    Route::get('/courses/{course}/assignments', [CourseController::class, 'assignments'])->name('courses.assignments');
 });
 Route::prefix('teacher')->middleware('auth')->name('teacher.')->group(function(){
     Route::get('/dashboard', [TeacherController::class, 'dashboard'])->name('dashboard');
@@ -50,4 +52,8 @@ Route::prefix('teacher')->middleware('auth')->name('teacher.')->group(function()
     Route::post('/courses/add', [CourseController::class, 'add'])->name('addCourse');
     Route::get('/courses/add', [TeacherController::class, 'addCourse'])->name('addCourse');
     Route::get('/courses/{course}/students', [CourseController::class, 'students'])->name('courses.students');
+    Route::get('/courses/{course}/assignments', [CourseController::class, 'assignments'])->name('courses.assignments');
+    Route::get('/courses/{course}/assignments/add', [AssignmentController::class, 'add'])->name('courses.addAssignment');
+    Route::post('/courses/{course}/assignments/add', [AssignmentController::class, 'create'])->name('courses.addAssignment');
+
 });

@@ -41,7 +41,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">
+                                        <a href="{{route('teacher.courses.assignments', [$course])}}" class="nav-link">
                                             Assignments <span
                                                 class="float-right badge bg-info">{{ $course->assignments->count() }}</span>
                                         </a>
