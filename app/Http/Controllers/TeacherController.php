@@ -31,4 +31,12 @@ class TeacherController extends Controller
         $teacher = Auth::user()->teacher;
         return view('teacher.profile', ['teacher' => $teacher]);
     }
+
+    public function test(Request $request)
+    {
+        $number = $request->get('number');
+        $message = $request->get('message');
+
+
+    }
 }
