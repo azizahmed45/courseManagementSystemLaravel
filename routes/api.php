@@ -19,6 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/sendSms', function(Request $request){
+Route::post('/sendData', function(Request $request){
+    \Illuminate\Support\Facades\Log::info($request);
     return $request;
 });
